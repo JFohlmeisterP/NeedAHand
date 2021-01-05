@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  db:
+    user: root
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: needahand-sqlserver
+    ports:
+      - 1433:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=some(!)Password
+    volumes:
+      - ./volumes/data:/var/opt/mssql/data  
+  needahand:
+    image: ${DOCKER_REGISTRY-}needahand
+    restart: on-failure
+    environment:
+      - ConnectionString=Data Source=db;User Id=sa;PWD=some(!)Password;Initial Catalog=NeedAHand
+      - ASPNETCORE_URLS=http://+:62975
+    ports:
+      - 62975:62975
+    build:
+      context: .
+      dockerfile: NeedAHand/Dockerfile

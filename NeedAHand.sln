@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeedAHand", "NeedAHand\NeedAHand.csproj", "{BF8A720A-7EB4-4EC8-A071-359C57C16AE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{01EEE24F-8352-4CA8-9E87-147B0E305400}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{905CBD91-4015-44E6-82D9-6FB5E9628AF7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF8A720A-7EB4-4EC8-A071-359C57C16AE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF8A720A-7EB4-4EC8-A071-359C57C16AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF8A720A-7EB4-4EC8-A071-359C57C16AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF8A720A-7EB4-4EC8-A071-359C57C16AE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01EEE24F-8352-4CA8-9E87-147B0E305400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01EEE24F-8352-4CA8-9E87-147B0E305400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01EEE24F-8352-4CA8-9E87-147B0E305400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01EEE24F-8352-4CA8-9E87-147B0E305400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{905CBD91-4015-44E6-82D9-6FB5E9628AF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{905CBD91-4015-44E6-82D9-6FB5E9628AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{905CBD91-4015-44E6-82D9-6FB5E9628AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{905CBD91-4015-44E6-82D9-6FB5E9628AF7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E1BAE4C-7AFB-4E4A-A8D2-4AB6900E32C7}
+	EndGlobalSection
+EndGlobal
