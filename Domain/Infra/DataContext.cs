@@ -8,7 +8,7 @@ namespace Domain.Infra
 {
     public class DataContext : DbContext
     {
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<User> Users { get; set; }
 
         /// <summary>
         /// To manually add a new migration, from solution folder run the following command changing <MigrationName> by your migration name

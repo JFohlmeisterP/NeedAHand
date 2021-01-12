@@ -9,41 +9,41 @@ namespace NeedAHand.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuariosController : ControllerBase
+    public class UsersController : ControllerBase
     {
         private readonly DataContext _context;
 
-        public UsuariosController(DataContext context)
+        public UsersController(DataContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public IEnumerable<Usuario> Get()
+        public IEnumerable<User> Get()
         {
-            return _context.Usuarios.ToList();
+            return _context.Users.ToList();
         }
 
         [HttpGet("{id}")]
-        public Usuario Get(Guid id)
+        public User Get(Guid id)
         {
-            return _context.Usuarios.Where(x => x.Id == id).FirstOrDefault();
+            return _context.Users.Where(x => x.Id == id).FirstOrDefault();
         }
 
         [HttpPost]
-        public void Post([FromBody] Usuario usuario)
+        public void Post([FromBody] User user)
         {
-            _context.Usuarios.Add(usuario);
+            _context.Users.Add(user);
             _context.SaveChanges();
         }
 
         [HttpPut("{id}")]
-        public void Put(Guid id, [FromBody] Usuario dto)
+        public void Put(Guid id, [FromBody] User dto)
         {
-            var user = _context.Usuarios.Where(x => x.Id == id).FirstOrDefault();
+            var user = _context.Users.Where(x => x.Id == id).FirstOrDefault();
 
             user.Nome = dto.Nome;
-            user.Perfil = dto.Perfil;
+            user.Profile = dto.Profile;
             user.Telefone = dto.Telefone;
             user.Cpf = dto.Cpf;
             user.DataNascimento = dto.DataNascimento;
@@ -56,7 +56,7 @@ namespace NeedAHand.Controllers
         [HttpDelete("{id}")]
         public void Delete(Guid id)
         {
-            var user = _context.Usuarios.Where(x => x.Id == id).FirstOrDefault();
+            var user = _context.Users.Where(x => x.Id == id).FirstOrDefault();
             _context.Remove(user);
             _context.SaveChanges();
         }

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Domain
 {
-    public abstract class Pessoa : Entity
+    public abstract class Person : Entity
     {
         public string Nome { get; set; }
         public string Cpf { get; set; }
@@ -11,7 +11,7 @@ namespace Domain
         public string Email { get; set; }
         public string Telefone { get; set; }
 
-        protected Pessoa(string nome, string cpf, DateTime dataNascimento, string email, string telefone)
+        protected Person(string nome, string cpf, DateTime dataNascimento, string email, string telefone)
         {
             if (!ValidarNome(nome))
                 throw new ArgumentException("Nome inválido.");
