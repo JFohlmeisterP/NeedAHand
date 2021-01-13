@@ -17,9 +17,9 @@ services:
     restart: on-failure
     environment:
       - ConnectionString=Data Source=db;User Id=sa;PWD=some(!)Password;Initial Catalog=NeedAHand
-      - ASPNETCORE_URLS=http://+:62975
+      - ASPNETCORE_URLS=http://+:5000
     ports:
-      - 62975:62975
+      - 5000:5000
     build:
       context: .
-      dockerfile: NeedAHand/Dockerfile
+      dockerfile: NeedAHand.Api/Dockerfile

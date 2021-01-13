@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace Domain
+namespace NeedAHand.Domain
 {
     public abstract class Person : Entity
     {

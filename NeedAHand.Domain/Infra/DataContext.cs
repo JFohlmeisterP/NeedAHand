@@ -3,7 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace Domain.Infra
+namespace NeedAHand.Domain.Infra
 
 {
     public class DataContext : DbContext

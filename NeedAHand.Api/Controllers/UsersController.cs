@@ -1,11 +1,11 @@
-﻿using Domain;
-using Domain.Infra;
+﻿using NeedAHand.Domain;
+using NeedAHand.Domain.Infra;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NeedAHand.Controllers
+namespace NeedAHand.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -31,10 +31,14 @@ namespace NeedAHand.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody] User user)
+        public ActionResult Post([FromBody] User user)
         {
+            var userDb = _context.Users.Where(x => x.Cpf == user.Cpf);
+            if (userDb != default)
+                return BadRequest("CPF já cadastrado!");
             _context.Users.Add(user);
             _context.SaveChanges();
+            return Ok();
         }
 
         [HttpPut("{id}")]
@@ -48,6 +52,7 @@ namespace NeedAHand.Controllers
             user.Cpf = dto.Cpf;
             user.DataNascimento = dto.DataNascimento;
             user.Email = dto.Email;
+            user.Senha = dto.Senha;
 
             _context.Update(user);
             _context.SaveChanges();
@@ -59,6 +64,20 @@ namespace NeedAHand.Controllers
             var user = _context.Users.Where(x => x.Id == id).FirstOrDefault();
             _context.Remove(user);
             _context.SaveChanges();
+        }
+
+        [HttpPost("Login")]
+        public ActionResult<User> Login(string cpf, string senha)
+        {
+            var user = _context.Users.Where(x => x.Cpf == cpf).FirstOrDefault();
+
+            if (user == default)
+                return Unauthorized("Usuário não encontrado!");
+
+            if (user.Senha != senha)
+                return Unauthorized("Senha incorreta!");
+
+            return Ok(user);
         }
     }
 }

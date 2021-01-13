@@ -1,6 +1,6 @@
 using System;
 
-namespace Domain
+namespace NeedAHand.Domain
 {
     public enum Profile
     {

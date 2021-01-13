@@ -1,4 +1,4 @@
-using Domain.Infra;
+using NeedAHand.Domain.Infra;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NeedAHand
+namespace NeedAHand.Api
 {
     public class Startup
     {
