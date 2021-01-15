@@ -9,10 +9,11 @@ namespace NeedAHand.Domain.Infra
     public class DataContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-
+        public DbSet<Product> Products { get; set; }
+        
         /// <summary>
         /// To manually add a new migration, from solution folder run the following command changing <MigrationName> by your migration name
-        /// dotnet ef migrations add <MigrationName> --startup-project NeedAHand --project Domain
+        /// dotnet ef migrations add ProductAdded --startup-project NeedAHand.Api --project NeedAHand.Domain
         /// </summary>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
