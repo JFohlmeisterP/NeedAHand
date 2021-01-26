@@ -1,16 +1,11 @@
 ﻿namespace NeedAHand.Domain
 {
-    public class TransportesCategorias : ICategorias
+    public enum TransportesCategorias
     {
-        public Category Categoria =>
-            Category.Transportes;
-        public enum SubCategorias
-        {
-            Frete = 0,
-            Motoboy = 1,
-            Motorista = 2,
-            AuxiliarCarga = 3
-        }
+        Frete = 0,
+        Motoboy = 1,
+        Motorista = 2,
+        AuxiliarCarga = 3
     }
 
 }

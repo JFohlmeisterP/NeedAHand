@@ -34,7 +34,7 @@ namespace NeedAHand.Api.Controllers
         public ActionResult Post([FromBody] User user)
         {
             var userDb = _context.Users.Where(x => x.Cpf == user.Cpf);
-            if (userDb != default)
+            if (userDb == default)
                 return BadRequest("CPF já cadastrado!");
             _context.Users.Add(user);
             _context.SaveChanges();

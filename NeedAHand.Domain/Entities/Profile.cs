@@ -4,7 +4,7 @@ namespace NeedAHand.Domain
 {
     public enum Profile
     {
-        Fornecedor = 0,
-        Consumidor = 1
+        Cliente = 0,
+        Fornecedor = 1
     }
 }
