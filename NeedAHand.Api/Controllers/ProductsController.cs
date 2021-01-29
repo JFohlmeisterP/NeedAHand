@@ -39,5 +39,75 @@ namespace NeedAHand.Api.Controllers
             return Ok();
         }
 
+        [HttpDelete("{id}")]
+        public void Delete(Guid id)
+        {
+            var produto = _context.Products.Where(x => x.Id == id).FirstOrDefault();
+            _context.Remove(produto);
+            _context.SaveChanges();
+        }
+
+        [HttpPut("{id}")]
+        public void Put(Guid id, [FromBody] Product dto)
+        {
+            var produto = _context.Products.Where(x => x.Id == id).FirstOrDefault();
+
+            produto.Nome = dto.Nome;
+            produto.Descricao = dto.Descricao;
+            produto.FornecedorId = dto.FornecedorId;
+            produto.CategoriaGeral = dto.CategoriaGeral;
+            produto.AulasCategoria = dto.AulasCategoria;
+            produto.ConsertosManutencoesCategoria = dto.ConsertosManutencoesCategoria;
+            produto.TransportesCategoria = dto.TransportesCategoria;
+            produto.ServicosGeraisCategoria = dto.ServicosGeraisCategoria;
+            produto.CuidadosPessoaisCategoria = dto.CuidadosPessoaisCategoria;
+            produto.EventosCategoria = dto.EventosCategoria;
+
+            _context.Update(produto);
+            _context.SaveChanges();
+        }
+
+        [HttpGet("{categoriaGeral}")]
+        public Product Get(Category categoriaGeral)
+        {
+            return _context.Products.Where(x => x.CategoriaGeral == categoriaGeral).FirstOrDefault();
+        }
+
+        [HttpGet("Aulas/{aulasCategoria}")]
+        public Product Get(AulasCategorias aulasCategoria)
+        {
+            return _context.Products.Where(x => x.AulasCategoria == aulasCategoria).FirstOrDefault();
+        }
+
+        [HttpGet("Consertos-Manutencoes/{consertosManutencoesCategoria}")]
+        public Product Get(ConsertosManutencoesCategorias consertosManutencoesCategoria)
+        {
+            return _context.Products.Where(x => x.ConsertosManutencoesCategoria == consertosManutencoesCategoria).FirstOrDefault();
+        }
+
+        [HttpGet("Transportes/{transportesCategoria}")]
+        public Product Get(TransportesCategorias transportesCategoria)
+        {
+            return _context.Products.Where(x => x.TransportesCategoria == transportesCategoria).FirstOrDefault();
+        }
+
+        [HttpGet("Servicos-Gerais/{servicosGeraisCategoria}")]
+        public Product Get(ServicosGeraisCategorias servicosGeraisCategoria)
+        {
+            return _context.Products.Where(x => x.ServicosGeraisCategoria == servicosGeraisCategoria).FirstOrDefault();
+        }
+
+        [HttpGet("Cuidados-Pessoais/{cuidadosPessoaisCategoria}")]
+        public Product Get(CuidadosPessoaisCategorias cuidadosPessoaisCategoria)
+        {
+            return _context.Products.Where(x => x.CuidadosPessoaisCategoria == cuidadosPessoaisCategoria).FirstOrDefault();
+        }
+
+        [HttpGet("Eventos/{eventosCategoria}")]
+        public Product Get(EventosCategorias eventosCategoria)
+        {
+            return _context.Products.Where(x => x.EventosCategoria == eventosCategoria).FirstOrDefault();
+        }
+
     }
 }

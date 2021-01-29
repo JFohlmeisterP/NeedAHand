@@ -62,6 +62,7 @@ namespace NeedAHand.Api.Controllers
         public void Delete(Guid id)
         {
             var user = _context.Users.Where(x => x.Id == id).FirstOrDefault();
+
             _context.Remove(user);
             _context.SaveChanges();
         }
