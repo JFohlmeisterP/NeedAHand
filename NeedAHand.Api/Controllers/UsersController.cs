@@ -73,12 +73,23 @@ namespace NeedAHand.Api.Controllers
             var user = _context.Users.Where(x => x.Cpf == cpf).FirstOrDefault();
 
             if (user == default)
-                return Unauthorized("Usuário não encontrado!");
+                return Unauthorized("Usuário não encontrado");
 
             if (user.Senha != senha)
-                return Unauthorized("Senha incorreta!");
+                return Unauthorized("Senha incorreta");
 
             return Ok(user);
+        }
+
+        [HttpGet("Profissionais")]
+        public ActionResult<User> Get(Profile profile)
+        {
+            if (profile != Profile.Fornecedor)
+                return NotFound("Profissional não encontrado");
+                 
+            var profissionais =  _context.Users.Where(x => x.Profile == profile);
+
+            return Ok(profissionais);
         }
     }
 }

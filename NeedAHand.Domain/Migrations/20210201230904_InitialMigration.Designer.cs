@@ -10,8 +10,8 @@ using NeedAHand.Domain.Infra;
 namespace NeedAHand.Domain.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210128234145_Products2")]
-    partial class Products2
+    [Migration("20210201230904_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
