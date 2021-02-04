@@ -6,6 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using NeedAHand.Domain.Dto;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using System.Net.Http;
+using System.IO;
+using static System.Net.Mime.MediaTypeNames;
+using System.Drawing;
 
 namespace NeedAHand.Api.Controllers
 {
@@ -68,46 +73,32 @@ namespace NeedAHand.Api.Controllers
         }
 
         [HttpGet("{categoriaGeral}")]
-        public Product Get(Category categoriaGeral)
-        {
-            return _context.Products.Where(x => x.CategoriaGeral == categoriaGeral).FirstOrDefault();
-        }
+        public IEnumerable<Product> Get(Category categoriaGeral) =>
+              _context.Products.Where(x => x.CategoriaGeral == categoriaGeral);
 
         [HttpGet("Aulas/{aulasCategoria}")]
-        public Product Get(AulasCategorias aulasCategoria)
-        {
-            return _context.Products.Where(x => x.AulasCategoria == aulasCategoria).FirstOrDefault();
-        }
+        public IEnumerable<Product> Get(AulasCategorias aulasCategoria) =>
+            _context.Products.Where(x => x.AulasCategoria == aulasCategoria);
 
         [HttpGet("Consertos-Manutencoes/{consertosManutencoesCategoria}")]
-        public Product Get(ConsertosManutencoesCategorias consertosManutencoesCategoria)
-        {
-            return _context.Products.Where(x => x.ConsertosManutencoesCategoria == consertosManutencoesCategoria).FirstOrDefault();
-        }
+        public IEnumerable<Product> Get(ConsertosManutencoesCategorias consertosManutencoesCategoria) =>
+            _context.Products.Where(x => x.ConsertosManutencoesCategoria == consertosManutencoesCategoria);
 
         [HttpGet("Transportes/{transportesCategoria}")]
-        public Product Get(TransportesCategorias transportesCategoria)
-        {
-            return _context.Products.Where(x => x.TransportesCategoria == transportesCategoria).FirstOrDefault();
-        }
+        public IEnumerable<Product> Get(TransportesCategorias transportesCategoria) =>
+            _context.Products.Where(x => x.TransportesCategoria == transportesCategoria);
 
         [HttpGet("Servicos-Gerais/{servicosGeraisCategoria}")]
-        public Product Get(ServicosGeraisCategorias servicosGeraisCategoria)
-        {
-            return _context.Products.Where(x => x.ServicosGeraisCategoria == servicosGeraisCategoria).FirstOrDefault();
-        }
+        public IEnumerable<Product> Get(ServicosGeraisCategorias servicosGeraisCategoria) =>
+            _context.Products.Where(x => x.ServicosGeraisCategoria == servicosGeraisCategoria);
 
         [HttpGet("Cuidados-Pessoais/{cuidadosPessoaisCategoria}")]
-        public Product Get(CuidadosPessoaisCategorias cuidadosPessoaisCategoria)
-        {
-            return _context.Products.Where(x => x.CuidadosPessoaisCategoria == cuidadosPessoaisCategoria).FirstOrDefault();
-        }
+        public IEnumerable<Product> Get(CuidadosPessoaisCategorias cuidadosPessoaisCategoria) =>
+            _context.Products.Where(x => x.CuidadosPessoaisCategoria == cuidadosPessoaisCategoria);
 
         [HttpGet("Eventos/{eventosCategoria}")]
-        public Product Get(EventosCategorias eventosCategoria)
-        {
-            return _context.Products.Where(x => x.EventosCategoria == eventosCategoria).FirstOrDefault();
-        }
+        public IEnumerable<Product> Get(EventosCategorias eventosCategoria) =>
+            _context.Products.Where(x => x.EventosCategoria == eventosCategoria);
 
     }
 }
