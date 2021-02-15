@@ -59,6 +59,9 @@ namespace NeedAHand.Api.Controllers
 
             produto.Nome = dto.Nome;
             produto.Descricao = dto.Descricao;
+            produto.Pais = dto.Pais;
+            produto.Uf = dto.Uf;
+            produto.Cidade = dto.Cidade;
             produto.FornecedorId = dto.FornecedorId;
             produto.CategoriaGeral = dto.CategoriaGeral;
             produto.AulasCategoria = dto.AulasCategoria;
@@ -74,7 +77,7 @@ namespace NeedAHand.Api.Controllers
 
         [HttpGet("{categoriaGeral}")]
         public IEnumerable<Product> Get(Category categoriaGeral) =>
-              _context.Products.Where(x => x.CategoriaGeral == categoriaGeral);
+            _context.Products.Where(x => x.CategoriaGeral == categoriaGeral);
 
         [HttpGet("Aulas/{aulasCategoria}")]
         public IEnumerable<Product> Get(AulasCategorias aulasCategoria) =>

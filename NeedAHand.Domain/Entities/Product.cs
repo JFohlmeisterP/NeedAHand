@@ -9,6 +9,9 @@ namespace NeedAHand.Domain
     {
         public string Nome { get; set; }
         public string Descricao { get; set; }
+        public string Pais { get; set; }
+        public string Uf { get; set; }
+        public string Cidade { get; set; }
         public User Fornecedor { get; set; }
         public Guid FornecedorId { get; set; }
         public List<ProductImage> Imagens { get; set; }
@@ -24,6 +27,9 @@ namespace NeedAHand.Domain
         {
             Nome = productdto.Nome;
             Descricao = productdto.Descricao;
+            Pais = productdto.Pais;
+            Uf = productdto.Uf;
+            Cidade = productdto.Cidade;
             FornecedorId = productdto.FornecedorId;
             CategoriaGeral = productdto.CategoriaGeral;
             AulasCategoria = productdto.AulasCategoria;

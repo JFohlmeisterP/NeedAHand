@@ -8,6 +8,9 @@ namespace NeedAHand.Domain.Dto
     {
         public string Nome { get; set; }
         public string Descricao { get; set; }
+        public string Pais { get; set; }
+        public string Uf { get; set; }
+        public string Cidade { get; set; }
         public Guid FornecedorId { get; set; }
         public List<ProductImage> Imagens { get; set; }
         public ProductImage ImagemCapa { get; set; }
