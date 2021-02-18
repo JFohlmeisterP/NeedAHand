@@ -62,6 +62,7 @@ namespace NeedAHand.Api.Controllers
             produto.Pais = dto.Pais;
             produto.Uf = dto.Uf;
             produto.Cidade = dto.Cidade;
+            produto.ImagemCapa = dto.ImagemCapa;
             produto.FornecedorId = dto.FornecedorId;
             produto.CategoriaGeral = dto.CategoriaGeral;
             produto.AulasCategoria = dto.AulasCategoria;
