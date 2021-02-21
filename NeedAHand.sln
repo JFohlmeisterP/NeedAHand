@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NeedAHand.Domain", "NeedAHa
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{905CBD91-4015-44E6-82D9-6FB5E9628AF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeedAHand.Tests", "NeedAHand.Tests\NeedAHand.Tests.csproj", "{3EE0E0AF-B084-40BA-8988-512E451BBED4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{905CBD91-4015-44E6-82D9-6FB5E9628AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{905CBD91-4015-44E6-82D9-6FB5E9628AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{905CBD91-4015-44E6-82D9-6FB5E9628AF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EE0E0AF-B084-40BA-8988-512E451BBED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EE0E0AF-B084-40BA-8988-512E451BBED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EE0E0AF-B084-40BA-8988-512E451BBED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EE0E0AF-B084-40BA-8988-512E451BBED4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
